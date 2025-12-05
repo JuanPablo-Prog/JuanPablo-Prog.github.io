@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Juan Pablo Ramírez Ruiz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #2c3e50;
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color);
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: var(--card-bg);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        header {
+            background: var(--secondary-color);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid white;
+            object-fit: cover;
+            margin-bottom: 15px;
+            background-color: #ddd;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-weight: 300;
+            font-size: 1.2em;
+            margin-top: 10px;
+            color: #bdc3c7;
+        }
+
+        .contact-info {
+            background: #34495e;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.9em;
+        }
+        
+        .contact-info span {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Estilo para el enlace de GitHub */
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid #bdc3c7;
+            transition: color 0.3s;
+        }
+        .contact-info a:hover {
+            color: #bdc3c7;
+        }
+
+        .main-content {
+            padding: 40px;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            text-transform: uppercase;
+            font-size: 1.2em;
+            letter-spacing: 1px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: #e3f2fd;
+            color: var(--primary-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .projects-list, .education-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .projects-list li, .education-list li {
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 3px solid var(--primary-color);
+        }
+
+        strong {
+            color: var(--secondary-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8em;
+            color: #777;
+            border-top: 1px solid #eee;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2em; }
+            .container { margin: 0; border-radius: 0; }
+            .contact-info { flex-direction: column; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <img src="foto-perfil.jpg" alt="Juan Pablo Ramírez" class="profile-img" onerror="this.style.display='none'"> 
+            
+            <h1>Juan Pablo Ramírez Ruiz</h1>
+            <p class="subtitle">Estudiante de Ingeniería en Sistemas Computacionales</p>
+        </header>
+
+        <div class="contact-info">
+            <span>📧 juanpablo.ramirez1507@gmail.com</span>
+            <span>📱 466 134 3206</span>
+            <span>📍 Celaya, Gto.</span>
+            <span>💻 <a href="https://github.com/JuanPablo-Prog" target="_blank">github.com/JuanPablo-Prog</a></span>
+        </div>
+
+        <div class="main-content">
+            
+            <section id="perfil">
+                <h2>Perfil Profesional</h2>
+                <p>
+                    Estudiante de Ingeniería en Sistemas Computacionales en el Tecnológico Nacional de México en Celaya. 
+                    Apasionado por el desarrollo de software, con capacidad de adaptación y liderazgo. 
+                    Cuento con experiencia académica y práctica en arquitecturas modernas como Serverless en AWS, 
+                    así como sólidos fundamentos en programación (Java, Python) y lenguajes de bajo nivel.
+                </p>
+            </section>
+
+            <section id="educacion">
+                <h2>Formación Académica</h2>
+                <ul class="education-list">
+                    <li>
+                        <strong>Ingeniería en Sistemas Computacionales</strong><br>
+                        Tecnológico Nacional de México en Celaya<br>
+                        <small>Actualmente cursando</small>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="skills">
+                <h2>Habilidades Técnicas (Stack)</h2>
+                <div class="skills-grid">
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">AWS (Serverless)</span>
+                    <span class="skill-tag">Ensamblador</span>
+                    <span class="skill-tag">Prolog</span>
+                    <span class="skill-tag">PHP</span>
+                    <span class="skill-tag">HTML/CSS</span>
+                    <span class="skill-tag">React (Básico)</span>
+                    <span class="skill-tag">SQL/APIs</span>
+                    <span class="skill-tag">JavaFX</span>
+                </div>
+            </section>
+
+            <section id="soft-skills">
+                <h2>Habilidades Blandas e Idiomas</h2>
+                <ul>
+                    <li><strong>Idiomas:</strong> Español (Nativo), Inglés (Nivel B2)</li>
+                    <li><strong>Liderazgo y Trabajo en Equipo:</strong> Experiencia coordinando proyectos académicos.</li>
+                    <li><strong>Adaptabilidad:</strong> Capacidad para aprender nuevas tecnologías rápidamente.</li>
+                    <li><strong>Valores:</strong> Honestidad y ética profesional.</li>
+                </ul>
+            </section>
+
+            <section id="proyectos">
+                <h2>Proyectos Destacados</h2>
+                <ul class="projects-list">
+                    <li>
+                        <strong>Arquitectura Serverless en AWS:</strong> 
+                        Diseño e implementación de un sistema escalable utilizando servicios en la nube de Amazon Web Services.
+                    </li>
+                    <li>
+                        <strong>Desarrollo de APIs y Servicios Web:</strong> 
+                        Creación de interfaces de programación para la comunicación entre aplicaciones y bases de datos.
+                    </li>
+                    <li>
+                        <strong>Aplicaciones de Escritorio con JavaFX:</strong> 
+                        Desarrollo de interfaces gráficas de usuario robustas utilizando Java.
+                    </li>
+                    <li>
+                        <strong>Redes y Telecomunicaciones:</strong> 
+                        Configuración y simulación de proyectos de infraestructura de red.
+                    </li>
+                    <li>
+                        <strong>Programación de Bajo Nivel:</strong> 
+                        Proyecto académico desarrollado en lenguaje Ensamblador para gestión directa de hardware/memoria.
+                    </li>
+                    <li>
+                        <strong>Desarrollo Web y Móvil:</strong> 
+                        Creación de páginas web dinámicas y aplicaciones móviles funcionales.
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Juan Pablo Ramírez Ruiz. Creado con HTML5 & CSS3.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
