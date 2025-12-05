@@ -10,8 +10,8 @@
     
     <style>
         :root {
-            --primary-color: #0056b3;
-            --secondary-color: #2c3e50;
+            --primary-color: #0056b3; /* Azul profesional */
+            --secondary-color: #2c3e50; /* Gris oscuro */
             --bg-color: #f4f7f6;
             --card-bg: #ffffff;
         }
@@ -34,6 +34,7 @@
             overflow: hidden;
         }
 
+        /* Encabezado */
         header {
             background: var(--secondary-color);
             color: white;
@@ -64,6 +65,7 @@
             color: #bdc3c7;
         }
 
+        /* Contacto */
         .contact-info {
             background: #34495e;
             color: white;
@@ -79,19 +81,21 @@
         .contact-info span {
             display: flex;
             align-items: center;
+            gap: 5px;
         }
 
-        /* Estilo para el enlace de GitHub */
         .contact-info a {
             color: white;
             text-decoration: none;
             border-bottom: 1px solid #bdc3c7;
             transition: color 0.3s;
         }
+        
         .contact-info a:hover {
             color: #bdc3c7;
         }
 
+        /* Contenido Principal */
         .main-content {
             padding: 40px;
         }
@@ -109,6 +113,7 @@
             letter-spacing: 1px;
         }
 
+        /* Grilla de Habilidades */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -125,6 +130,7 @@
             font-size: 0.9em;
         }
 
+        /* Listas */
         .projects-list, .education-list {
             list-style: none;
             padding: 0;
@@ -148,6 +154,7 @@
             border-top: 1px solid #eee;
         }
 
+        /* Diseño Responsivo (Móvil) */
         @media (max-width: 600px) {
             h1 { font-size: 2em; }
             .container { margin: 0; border-radius: 0; }
@@ -159,7 +166,7 @@
 
     <div class="container">
         <header>
-            <img src="foto-perfil.jpg" alt="Juan Pablo Ramírez" class="profile-img" onerror="this.style.display='none'"> 
+            <img src="foto-perfil.jpg" alt="Juan Pablo Ramírez" class="profile-img">
             
             <h1>Juan Pablo Ramírez Ruiz</h1>
             <p class="subtitle">Estudiante de Ingeniería en Sistemas Computacionales</p>
