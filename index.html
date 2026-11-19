@@ -1,268 +1,786 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Juan Pablo Ramírez Ruiz</title>
+    <meta name="theme-color" content="#172d3b">
+    <meta name="description" content="Currículum de Juan Pablo Ramírez Ruiz, estudiante de Ingeniería en Sistemas Computacionales.">
+    <title>Juan Pablo Ramírez Ruiz | Curriculum Vitae</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --primary-color: #0056b3; /* Azul profesional */
-            --secondary-color: #2c3e50; /* Gris oscuro */
-            --bg-color: #f4f7f6;
-            --card-bg: #ffffff;
+            --navy: #172d3b;
+            --navy-light: #254456;
+            --accent: #b28b62;
+            --paper: #ffffff;
+            --background: #edf0ef;
+            --text: #303b40;
+            --muted: #778187;
+            --line: #e5e8e7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: var(--bg-color);
-            color: #333;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
+            font-family: 'DM Sans', sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.65;
+            padding: 45px 20px;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            background: var(--card-bg);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            border-radius: 8px;
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .resume {
+            max-width: 1050px;
+            margin: auto;
+            background: var(--paper);
+            box-shadow: 0 15px 55px rgba(26, 43, 52, 0.09);
+        }
+
+        /* HEADER */
+
+        .header {
+            background: var(--navy);
+            color: white;
+            padding: 48px 58px;
+            position: relative;
             overflow: hidden;
         }
 
-        /* Encabezado */
-        header {
-            background: var(--secondary-color);
-            color: white;
-            padding: 40px;
-            text-align: center;
+        .header::after {
+            content: "";
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            border: 1px solid rgba(255,255,255,.09);
+            border-radius: 50%;
+            right: -100px;
+            top: -140px;
+            box-shadow: 0 0 0 35px rgba(255,255,255,.025),
+                        0 0 0 70px rgba(255,255,255,.02);
+            pointer-events: none;
         }
 
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 4px solid white;
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-photo {
+            width: 155px;
+            height: 175px;
             object-fit: cover;
-            margin-bottom: 15px;
-            background-color: #ddd;
+            object-position: center;
+            border-radius: 5px;
+            border: 3px solid rgba(255,255,255,.75);
+            flex-shrink: 0;
+            background: #d9dfe0;
+        }
+
+        .header-text {
+            flex: 1;
+        }
+
+        .eyebrow {
+            color: #c8a47d;
+            text-transform: uppercase;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
         }
 
         h1 {
-            margin: 0;
-            font-size: 2.5em;
-            letter-spacing: 1px;
+            font-family: 'Manrope', sans-serif;
+            font-size: clamp(28px, 4vw, 39px);
+            line-height: 1.2;
+            font-weight: 800;
+            letter-spacing: -1.3px;
         }
 
-        .subtitle {
-            font-weight: 300;
-            font-size: 1.2em;
-            margin-top: 10px;
-            color: #bdc3c7;
+        .profession {
+            color: #c5d0d4;
+            font-size: 15px;
+            margin-top: 12px;
+            font-weight: 400;
         }
 
-        /* Contacto */
-        .contact-info {
-            background: #34495e;
-            color: white;
-            padding: 15px;
-            text-align: center;
+        .header-line {
+            width: 48px;
+            height: 3px;
+            background: var(--accent);
+            margin-top: 22px;
+        }
+
+        /* CONTACT */
+
+        .contact-bar {
+            background: #203b4b;
+            padding: 17px 58px;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             flex-wrap: wrap;
-            gap: 20px;
-            font-size: 0.9em;
+            gap: 12px 22px;
+            color: #e0e7e9;
+            font-size: 12px;
         }
-        
-        .contact-info span {
+
+        .contact-item {
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 9px;
         }
 
-        .contact-info a {
-            color: white;
-            text-decoration: none;
-            border-bottom: 1px solid #bdc3c7;
-            transition: color 0.3s;
-        }
-        
-        .contact-info a:hover {
-            color: #bdc3c7;
+        .contact-icon {
+            color: #c8a47d;
+            font-size: 15px;
         }
 
-        /* Contenido Principal */
-        .main-content {
-            padding: 40px;
+        .contact-item a {
+            transition: color .2s;
         }
 
-        section {
-            margin-bottom: 30px;
+        .contact-item a:hover {
+            color: #c8a47d;
+        }
+
+        /* MAIN LAYOUT */
+
+        .content {
+            display: grid;
+            grid-template-columns: 0.85fr 1.45fr;
+        }
+
+        .sidebar {
+            background: #f5f6f4;
+            padding: 40px 32px 45px 40px;
+            border-right: 1px solid var(--line);
+        }
+
+        .main {
+            padding: 40px 45px 45px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .section-number {
+            color: var(--accent);
+            font-family: 'Manrope', sans-serif;
+            font-size: 12px;
+            font-weight: 800;
         }
 
         h2 {
-            color: var(--primary-color);
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
+            font-family: 'Manrope', sans-serif;
+            font-size: 13px;
             text-transform: uppercase;
-            font-size: 1.2em;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            color: var(--navy);
+            font-weight: 800;
         }
 
-        /* Grilla de Habilidades */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        .heading-line {
+            flex: 1;
+            height: 1px;
+            background: var(--line);
+        }
+
+        p {
+            font-size: 13px;
+        }
+
+        .profile-text {
+            color: #566269;
+            line-height: 1.85;
+            font-size: 13px;
+        }
+
+        /* EDUCATION */
+
+        .education-item {
+            border-left: 2px solid #c5a27d;
+            padding-left: 16px;
+        }
+
+        .item-title {
+            font-family: 'Manrope', sans-serif;
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--navy);
+            line-height: 1.5;
+        }
+
+        .item-subtitle {
+            color: #68747a;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .item-date {
+            display: inline-block;
+            color: #a17d58;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .8px;
+            margin-top: 9px;
+        }
+
+        /* SKILLS */
+
+        .skill-group {
+            margin-bottom: 20px;
+        }
+
+        .skill-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .skill-group h3 {
+            font-size: 11px;
+            color: var(--navy);
+            font-weight: 700;
+            margin-bottom: 9px;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+        }
+
+        .skill {
+            border: 1px solid #dce2e0;
+            padding: 5px 9px;
+            font-size: 11px;
+            color: #526169;
+            background: #fff;
+            border-radius: 3px;
+        }
+
+        /* LANGUAGES */
+
+        .language-row {
+            display: flex;
+            justify-content: space-between;
             gap: 10px;
+            padding: 9px 0;
+            border-bottom: 1px solid #e4e8e5;
+            font-size: 12px;
         }
 
-        .skill-tag {
-            background: #e3f2fd;
-            color: var(--primary-color);
-            padding: 8px 15px;
-            border-radius: 20px;
-            text-align: center;
-            font-weight: bold;
-            font-size: 0.9em;
+        .language-row:last-child {
+            border-bottom: none;
         }
 
-        /* Listas */
-        .projects-list, .education-list {
+        .language-level {
+            color: #a17d58;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        /* SOFT SKILLS */
+
+        .soft-skills {
             list-style: none;
-            padding: 0;
         }
 
-        .projects-list li, .education-list li {
-            margin-bottom: 15px;
-            padding-left: 15px;
-            border-left: 3px solid var(--primary-color);
+        .soft-skills li {
+            position: relative;
+            padding-left: 16px;
+            font-size: 12px;
+            color: #59656b;
+            margin-bottom: 10px;
         }
 
-        strong {
-            color: var(--secondary-color);
+        .soft-skills li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
         }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 0.8em;
-            color: #777;
-            border-top: 1px solid #eee;
+        /* PROJECTS */
+
+        .project {
+            position: relative;
+            padding: 0 0 22px 22px;
+            border-left: 1px solid #dce1df;
+            margin-left: 5px;
         }
 
-        /* Diseño Responsivo (Móvil) */
-        @media (max-width: 600px) {
-            h1 { font-size: 2em; }
-            .container { margin: 0; border-radius: 0; }
-            .contact-info { flex-direction: column; gap: 10px; }
+        .project:last-child {
+            padding-bottom: 0;
+            border-left-color: transparent;
+        }
+
+        .project::before {
+            content: "";
+            position: absolute;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: var(--accent);
+            left: -5px;
+            top: 5px;
+        }
+
+        .project h3 {
+            font-family: 'Manrope', sans-serif;
+            font-size: 13px;
+            color: var(--navy);
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        .project p {
+            color: #68747a;
+            font-size: 12px;
+            line-height: 1.75;
+        }
+
+        /* FOOTER */
+
+        .footer {
+            background: var(--navy);
+            color: #b8c5c9;
+            padding: 17px 35px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 10px;
+            letter-spacing: .5px;
+        }
+
+        .footer strong {
+            color: white;
+            font-weight: 600;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 700px) {
+            body {
+                padding: 0;
+                background: white;
+            }
+
+            .header {
+                padding: 35px 25px;
+            }
+
+            .header-content {
+                gap: 20px;
+                align-items: center;
+            }
+
+            .profile-photo {
+                width: 112px;
+                height: 135px;
+            }
+
+            h1 {
+                font-size: 25px;
+            }
+
+            .profession {
+                font-size: 12px;
+            }
+
+            .contact-bar {
+                padding: 20px 25px;
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+
+            .content {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                padding: 35px 28px;
+                border-right: none;
+                border-bottom: 1px solid var(--line);
+            }
+
+            .main {
+                padding: 35px 28px;
+            }
+
+            .footer {
+                flex-direction: column;
+                gap: 6px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 390px) {
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .profile-photo {
+                width: 115px;
+                height: 130px;
+            }
+        }
+
+        /* PRINT / PDF */
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                background: white;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .resume {
+                width: 100%;
+                max-width: none;
+                box-shadow: none;
+            }
+
+            .header,
+            .contact-bar,
+            .sidebar,
+            .footer {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .section,
+            .project,
+            .education-item {
+                break-inside: avoid;
+            }
+
+            a {
+                text-decoration: none;
+            }
         }
     </style>
 </head>
+
 <body>
 
-    <div class="container">
-        <header>
-           
-            
-            <h1>Juan Pablo Ramírez Ruiz</h1>
-            <p class="subtitle">Estudiante de Ingeniería en Sistemas Computacionales</p>
-        </header>
+<div class="resume">
 
-        <div class="contact-info">
-            <span>📧 juanpablo.ramirez1507@gmail.com</span>
-            <span>📱 466 134 3206</span>
-            <span>📍 Celaya, Gto.</span>
-            <span>💻 <a href="https://github.com/JuanPablo-Prog" target="_blank">github.com/JuanPablo-Prog</a></span>
-        </div>
+    <!-- ENCABEZADO -->
+    <header class="header">
+        <div class="header-content">
 
-        <div class="main-content">
-            
-            <section id="perfil">
-                <h2>Perfil Profesional</h2>
-                <p>
-                    Estudiante de Ingeniería en Sistemas Computacionales en el Tecnológico Nacional de México en Celaya. 
-                    Apasionado por el desarrollo de software, con capacidad de adaptación y liderazgo. 
-                    Cuento con experiencia académica y práctica en arquitecturas modernas como Serverless en AWS, 
-                    así como sólidos fundamentos en programación (Java, Python) y lenguajes de bajo nivel.
+            <img
+                src="mifoto.jpeg"
+                alt="Fotografía de Juan Pablo Ramírez Ruiz"
+                class="profile-photo"
+            >
+
+            <div class="header-text">
+                <div class="eyebrow">Curriculum Vitae</div>
+
+                <h1>Juan Pablo<br>Ramírez Ruiz</h1>
+
+                <p class="profession">
+                    Estudiante de Ingeniería en Sistemas Computacionales
                 </p>
-            </section>
 
-            <section id="educacion">
-                <h2>Formación Académica</h2>
-                <ul class="education-list">
-                    <li>
-                        <strong>Ingeniería en Sistemas Computacionales</strong><br>
-                        Tecnológico Nacional de México en Celaya<br>
-                        <small>Actualmente cursando</small>
-                    </li>
-                </ul>
-            </section>
+                <div class="header-line"></div>
+            </div>
 
-            <section id="skills">
-                <h2>Habilidades Técnicas (Stack)</h2>
-                <div class="skills-grid">
-                    <span class="skill-tag">Java</span>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">AWS (Serverless)</span>
-                    <span class="skill-tag">Ensamblador</span>
-                    <span class="skill-tag">Prolog</span>
-                    <span class="skill-tag">PHP</span>
-                    <span class="skill-tag">HTML/CSS</span>
-                    <span class="skill-tag">React (Básico)</span>
-                    <span class="skill-tag">SQL/APIs</span>
-                    <span class="skill-tag">JavaFX</span>
-                </div>
-            </section>
+        </div>
+    </header>
 
-            <section id="soft-skills">
-                <h2>Habilidades Blandas e Idiomas</h2>
-                <ul>
-                    <li><strong>Idiomas:</strong> Español (Nativo), Inglés (Nivel B2)</li>
-                    <li><strong>Liderazgo y Trabajo en Equipo:</strong> Experiencia coordinando proyectos académicos.</li>
-                    <li><strong>Adaptabilidad:</strong> Capacidad para aprender nuevas tecnologías rápidamente.</li>
-                    <li><strong>Valores:</strong> Honestidad y ética profesional.</li>
-                </ul>
-            </section>
+    <!-- INFORMACIÓN DE CONTACTO -->
+    <div class="contact-bar">
 
-            <section id="proyectos">
-                <h2>Proyectos Destacados</h2>
-                <ul class="projects-list">
-                    <li>
-                        <strong>Arquitectura Serverless en AWS:</strong> 
-                        Diseño e implementación de un sistema escalable utilizando servicios en la nube de Amazon Web Services.
-                    </li>
-                    <li>
-                        <strong>Desarrollo de APIs y Servicios Web:</strong> 
-                        Creación de interfaces de programación para la comunicación entre aplicaciones y bases de datos.
-                    </li>
-                    <li>
-                        <strong>Aplicaciones de Escritorio con JavaFX:</strong> 
-                        Desarrollo de interfaces gráficas de usuario robustas utilizando Java.
-                    </li>
-                    <li>
-                        <strong>Redes y Telecomunicaciones:</strong> 
-                        Configuración y simulación de proyectos de infraestructura de red.
-                    </li>
-                    <li>
-                        <strong>Programación de Bajo Nivel:</strong> 
-                        Proyecto académico desarrollado en lenguaje Ensamblador para gestión directa de hardware/memoria.
-                    </li>
-                    <li>
-                        <strong>Desarrollo Web y Móvil:</strong> 
-                        Creación de páginas web dinámicas y aplicaciones móviles funcionales.
-                    </li>
-                </ul>
-            </section>
+        <div class="contact-item">
+            <span class="contact-icon">✉</span>
+            <a href="mailto:juanpablo.ramirez1507@gmail.com">
+                juanpablo.ramirez1507@gmail.com
+            </a>
         </div>
 
-        <footer>
-            <p>&copy; 2025 Juan Pablo Ramírez Ruiz. Creado con HTML5 & CSS3.</p>
-        </footer>
+        <div class="contact-item">
+            <span class="contact-icon">☎</span>
+            <span>466 134 3206</span>
+        </div>
+
+        <div class="contact-item">
+            <span class="contact-icon">⌖</span>
+            <span>Celaya, Guanajuato</span>
+        </div>
+
+        <div class="contact-item">
+            <span class="contact-icon">⌘</span>
+            <a href="https://github.com/JuanPablo-Prog" target="_blank" rel="noopener noreferrer">
+                GitHub / JuanPablo-Prog
+            </a>
+        </div>
+
     </div>
+
+    <!-- CONTENIDO -->
+    <div class="content">
+
+        <!-- COLUMNA IZQUIERDA -->
+        <aside class="sidebar">
+
+            <section class="section">
+
+                <div class="section-heading">
+                    <span class="section-number">01</span>
+                    <h2>Formación</h2>
+                    <div class="heading-line"></div>
+                </div>
+
+                <div class="education-item">
+                    <div class="item-title">
+                        Ingeniería en Sistemas Computacionales
+                    </div>
+
+                    <div class="item-subtitle">
+                        Tecnológico Nacional de México en Celaya
+                    </div>
+
+                    <span class="item-date">En curso</span>
+                </div>
+
+            </section>
+
+            <section class="section">
+
+                <div class="section-heading">
+                    <span class="section-number">02</span>
+                    <h2>Tecnologías</h2>
+                    <div class="heading-line"></div>
+                </div>
+
+                <div class="skill-group">
+                    <h3>Lenguajes</h3>
+                    <div class="skill-list">
+                        <span class="skill">Java</span>
+                        <span class="skill">Python</span>
+                        <span class="skill">PHP</span>
+                        <span class="skill">Prolog</span>
+                        <span class="skill">Ensamblador</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h3>Desarrollo web</h3>
+                    <div class="skill-list">
+                        <span class="skill">HTML</span>
+                        <span class="skill">CSS</span>
+                        <span class="skill">React</span>
+                        <span class="skill">APIs REST</span>
+                        <span class="skill">SQL</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h3>Herramientas y plataformas</h3>
+                    <div class="skill-list">
+                        <span class="skill">AWS</span>
+                        <span class="skill">Serverless</span>
+                        <span class="skill">JavaFX</span>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="section">
+
+                <div class="section-heading">
+                    <span class="section-number">03</span>
+                    <h2>Idiomas</h2>
+                    <div class="heading-line"></div>
+                </div>
+
+                <div class="language-row">
+                    <span>Español</span>
+                    <span class="language-level">Nativo</span>
+                </div>
+
+                <div class="language-row">
+                    <span>Inglés</span>
+                    <span class="language-level">B2</span>
+                </div>
+
+            </section>
+
+            <section class="section">
+
+                <div class="section-heading">
+                    <span class="section-number">04</span>
+                    <h2>Competencias</h2>
+                    <div class="heading-line"></div>
+                </div>
+
+                <ul class="soft-skills">
+                    <li>Liderazgo y coordinación de equipos.</li>
+                    <li>Trabajo colaborativo.</li>
+                    <li>Adaptabilidad y aprendizaje continuo.</li>
+                    <li>Resolución de problemas.</li>
+                    <li>Responsabilidad y ética profesional.</li>
+                </ul>
+
+            </section>
+
+        </aside>
+
+        <!-- COLUMNA DERECHA -->
+        <main class="main">
+
+            <section class="section">
+
+                <div class="section-heading">
+                    <span class="section-number">01</span>
+                    <h2>Perfil profesional</h2>
+                    <div class="heading-line"></div>
+                </div>
+
+                <p class="profile-text">
+                    Estudiante de Ingeniería en Sistemas Computacionales
+                    en el Tecnológico Nacional de México en Celaya, interesado
+                    en el desarrollo de software y la construcción de soluciones
+                    tecnológicas. Cuento con formación académica en programación,
+                    desarrollo web, bases de datos y servicios en la nube.
+                    He participado en proyectos que me han permitido aplicar
+                    conocimientos en diferentes tecnologías y trabajar
+                    colaborativamente en la resolución de problemas.
+                </p>
+
+            </section>
+
+            <section class="section">
+
+                <div class="section-heading">
+                    <span class="section-number">02</span>
+                    <h2>Proyectos destacados</h2>
+                    <div class="heading-line"></div>
+                </div>
+
+                <article class="project">
+                    <h3>Arquitectura Serverless en AWS</h3>
+                    <p>
+                        Diseño e implementación académica de un sistema
+                        utilizando servicios en la nube de Amazon Web Services,
+                        explorando arquitecturas escalables y procesamiento
+                        de servicios sin administración directa de servidores.
+                    </p>
+                </article>
+
+                <article class="project">
+                    <h3>Desarrollo de APIs y servicios web</h3>
+                    <p>
+                        Desarrollo de interfaces de programación para
+                        conectar aplicaciones con bases de datos,
+                        facilitando el intercambio y procesamiento de información.
+                    </p>
+                </article>
+
+                <article class="project">
+                    <h3>Aplicaciones de escritorio con JavaFX</h3>
+                    <p>
+                        Construcción de aplicaciones con interfaces gráficas
+                        utilizando JavaFX, aplicando fundamentos de
+                        programación orientada a objetos.
+                    </p>
+                </article>
+
+                <article class="project">
+                    <h3>Redes y telecomunicaciones</h3>
+                    <p>
+                        Configuración y simulación de infraestructura de red,
+                        trabajando con conceptos de conectividad,
+                        direccionamiento y comunicación entre dispositivos.
+                    </p>
+                </article>
+
+                <article class="project">
+                    <h3>Programación de bajo nivel</h3>
+                    <p>
+                        Desarrollo de un proyecto académico en lenguaje
+                        Ensamblador para trabajar con operaciones de bajo nivel
+                        y comprender la interacción con los recursos del sistema.
+                    </p>
+                </article>
+
+                <article class="project">
+                    <h3>Desarrollo web y móvil</h3>
+                    <p>
+                        Creación de sitios web y aplicaciones móviles
+                        mediante tecnologías de desarrollo actuales,
+                        integrando interfaces, lógica de aplicación
+                        y gestión de datos.
+                    </p>
+                </article>
+
+            </section>
+
+            <section class="section">
+
+                <div class="section-heading">
+                    <span class="section-number">03</span>
+                    <h2>Intereses profesionales</h2>
+                    <div class="heading-line"></div>
+                </div>
+
+                <p class="profile-text">
+                    Desarrollo de software · Desarrollo web ·
+                    Aplicaciones móviles · Computación en la nube ·
+                    Bases de datos · Infraestructura tecnológica.
+                </p>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <footer class="footer">
+        <span><strong>JUAN PABLO RAMÍREZ RUIZ</strong></span>
+        <span>Curriculum Vitae · 2026</span>
+    </footer>
+
+</div>
 
 </body>
 </html>
